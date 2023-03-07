@@ -89,7 +89,7 @@ const Start: React.FC<startProps> = ({
       </motion.div>
       <motion.button
         className="start-button"
-        variants={fadeIn("up", "tween", 0.3, 3)}
+        variants={fadeIn("up", "tween", 0.3, 0.5)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
