@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import '@/styles/start.scss';
+import '@/styles/about.scss';
 import type { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
 
