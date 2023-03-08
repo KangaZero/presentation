@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Typed from "typed.js";
+import Typed from "typed.js"
 
 import { fadeIn, parentVariants, childVariants } from "../utils/motion";
 import Link from "next/link";

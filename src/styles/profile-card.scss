@@ -1,0 +1,65 @@
+.profile-card {
+    height: 473px;
+    width: 375px;
+    background: #808080;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 70px 63px -60px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .profile-card0 {
+    background: url("../../public/profile-card-image2.jpg") center center no-repeat;
+    background-size: 300px;
+  }
+  .profile-card0:hover {
+    background: url("../../public/profile-card-image2.jpg") left center no-repeat;
+    background-size: 600px;
+  }
+  .profile-card0:hover .profile-title {
+    opacity: 1;
+  }
+  .profile-card0:hover .fa {
+    opacity: 1;
+  }
+
+  .profile-border {
+    height: 369px;
+    width: 290px;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
+    position: relative;
+  }
+  .profile-border:hover {
+    border: 1px solid #fff;
+  }
+
+  .profile-title {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff;
+    margin: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .profile-fa {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .profile-icons {
+    position: absolute;
+    fill: #fff;
+    color: #fff;
+    height: 130px;
+    top: 226px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
