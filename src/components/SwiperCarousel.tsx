@@ -1,21 +1,30 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+import {
+    slideIn,
+    fadeIn,
+    parentVariants,
+    childVariants,
+  } from "../utils/motion";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-// import required modules
 import { Autoplay, Pagination, Navigation, EffectCoverflow } from "swiper";
-
 import projectDetails from "@/constants/projectDetails";
 
 
+
 const SwiperCarousel = () => (
-  <div>
+  <motion.div
+  initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+          variants={fadeIn("down", "tween", 0.3, 0.5)}
+  >
     <Swiper
       effect={"coverflow"}
       speed={2000}
@@ -33,9 +42,9 @@ const SwiperCarousel = () => (
         delay: 30000,
         disableOnInteraction: false,
       }}
-      pagination={true}
+    //   pagination={true}
       navigation={true}
-      modules={[Navigation, Autoplay, EffectCoverflow, Pagination]}
+      modules={[Navigation, Autoplay, EffectCoverflow]}
       className="mySwiper"
     >
 
@@ -43,11 +52,11 @@ const SwiperCarousel = () => (
         <SwiperSlide key={index}>
           <h1>{project.title}</h1>
           <img src={project.url} />
-          <p>{project.description}</p>
+          <p className="image-carousel-text">{project.description}</p>
         </SwiperSlide>
       ))}
     </Swiper>
-  </div>
+  </motion.div>
 );
 
 export default SwiperCarousel;

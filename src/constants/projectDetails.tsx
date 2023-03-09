@@ -8,32 +8,32 @@ export interface projectDetailsProps {
 const projectDetails: projectDetailsProps[] = [
   {
     title: "ホームページ",
-    description: "This is what the user sees when they first visit the site",
+    description: "最初にユーザーがサイトにアクセスすると、このような画面が表示されます。",
     url: '/home-page.png',
   },
   {
     title: "ペットシッター検索結果",
-    description: "Here users are able to search for petsitters based on their location, prize, and name in alphabetical order",
+    description: "ここでは、ユーザーは場所、料金、および名前のアルファベット順に基づいてペットシッターを検索することができます。",
     url: '/nanny-list.png',
   },
   {
     title: "ペットシッタープのロフィール",
-    description: "ホームページの説明",
+    description: "ここでは、ユーザーはペットシッターの詳細を確認し、ペットシッターを予約することができます。",
     url: "nanny-profile.png",
   },
   {
     title: "予約ページ",
-    description: "Users are able to book a petsitter for a specific date as well as any additional notes they may have",
+    description: "ユーザーは、特定の日付にペットシッターを予約することができ、さらに任意の追加情報を記入することもできます。",
     url: "booking-page.png",
   },
   {
     title: "お支払いページ",
-    description: "Using stripe, users are able to pay for their booking easily and securely",
+    description: "Stripeを使用することで、ユーザーは簡単かつ安全に予約の支払いを行うことができます。",
     url: "payment-page.png",
   },
   {
     title: "登録ページ",
-    description: "Users may sign up for an account to view their current and past bookings, as well as add and update their personal details such as their address, phone number, and profile picture",
+    description: "ユーザーはアカウントにサインアップして、現在および過去の予約を表示し、住所、電話番号、プロフィール画像などの個人情報を追加および更新することができます。",
     url: "signup-page.png",
   },
 ];

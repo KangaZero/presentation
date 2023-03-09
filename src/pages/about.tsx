@@ -42,9 +42,6 @@ import ThreeDButton from "@/components/ThreeDButton";
 import Usyd from "../../public/usyd.svg";
 import Image from "next/image";
 
-// export interface aboutProps {
-//     roles: roleProps[];
-// }
 
 const About = () => {
   return (
