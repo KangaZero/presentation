@@ -28,11 +28,11 @@
 
 .about-heading-button-container button {
   margin: 0px 10px;
-  padding: 25px 30px;
+  padding: 20px 25px;
   border: none;
   border-radius: 5px;
   background-color: #2000575e;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .about-heading-button-container button:hover {
@@ -42,11 +42,11 @@
 .about-body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 80vh;
+  height: 88vh;
   width: 100%;
   background-color: rgb(69, 59, 116);
-  // border: 1px solid black;
-  padding: 50px;
+//   border: 1px solid black;
+  padding: 5px;
 }
 
 .about-container {
@@ -58,6 +58,10 @@
       align-items: center;
 }
 
+.divider{
+    padding: 2px;
+}
+
 .skill-icons-container {
     display: flex;
     flex-direction: column;
@@ -67,6 +71,10 @@
 //   row-gap: 20px;
 //   border: 1px solid black;
   padding: 15px;
+}
+
+.skill-icons-container > h2 {
+    color:#cfcfd3
 }
 
 .custom-hidden {
