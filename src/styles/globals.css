@@ -2,10 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/earlyaccess/hannari.css');
-@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
-@font-face { font-family: 'Hannari'; src: local('Hannari') or url('https://fonts.googleapis.com/earlyaccess/hannari.css'); }
-@font-face { font-family: 'Sawarabi Mincho'; src: local('Sawarabi Mincho') or url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho'); }
+
+@import url('https://fonts.googleapis.com/earlyaccess/nicomoji.css');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+
+@font-face { font-family: 'Nico Moji'; src: local('Nico Moji') or url('https://fonts.googleapis.com/earlyaccess/nicomoji.css'); }
+@font-face { font-family: 'Rampart One'; src: local('Rampart One') or url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap'); }
+@font-face { font-family: 'DotGothic16'; src: local('DotGothic16') or url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap'); }
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -61,7 +66,7 @@ body {
       rgb(var(--background-end-rgb))
       )
       rgb(var(--background-start-rgb));
-  font-family: 'Hannari', 'Sawarabi Mincho', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Nico Moji', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 
 a {

@@ -38,8 +38,8 @@ import roles from "../constants/roles";
 import profile from "../constants/profile";
 import VerticalTextCarousel from "@/components/VerticalTextCarousel";
 import ProfileCard from "@/components/profileCard";
-import {TypingText} from "@/components/TypingText";
-import Usyd from '../../public/usyd.svg'
+import ThreeDButton from "@/components/ThreeDButton";
+import Usyd from "../../public/usyd.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -77,7 +77,9 @@ const About = () => {
         </motion.h1>
 
         <motion.div className="about-heading-button-container">
-          <Link href="/projects">
+            <ThreeDButton text="Projects" link="/projects" />
+            <ThreeDButton text="Home" link="/" />
+          {/* <Link href="/projects">
             <motion.button
               initial="hidden"
               whileInView="show"
@@ -97,8 +99,8 @@ const About = () => {
               className="return-button"
             >
               Return
-            </motion.button>
-          </Link>
+            </motion.button> */}
+          {/* </Link> */}
         </motion.div>
       </motion.div>
       {/* about-body */}
@@ -254,45 +256,43 @@ const About = () => {
           <motion.div className="skill-container">
             <motion.h1 className="skill-text">学歴</motion.h1>
             <motion.div className="skill-icons-container">
-            <motion.h2
+              <motion.h2
+                className="skill-sub-text"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("up", "tween", 0.6, 0.5)}
               >
-               フルスタックウェブ開発証明書
+                フルスタックウェブ開発証明書
               </motion.h2>
-                  <div className="divider"></div>
+              <div className="divider"></div>
               <motion.h3
-                className="date-text"             
+                className="skill-sub-text"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("right", "tween", 0.6, 0.5)}
               >
- 
-               
-                ２０２２年・７月 ～ ２０２３年・1月
+                「２０２２年・７月 ～ ２０２３年・1月」
               </motion.h3>
               <motion.h2
+                className="skill-sub-text"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("down", "tween", 0.6, 0.5)}
               >
-               
-                教養学部 <GiGrandPiano size={25}/> <GiJapan size={25}/>
+                教養学部 <GiGrandPiano size={25} /> <GiJapan size={25} />
               </motion.h2>
-                  <div className="divider"></div>
+              <div className="divider"></div>
               <motion.h3
-                className="date-text"             
+                className="skill-sub-text"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("left", "tween", 0.6, 0.5)}
               >
-               
-                ２０１９年・1月 ～ ２０２２年・７月
+                「２０１９年・1月 ～ ２０２２年・７月」
               </motion.h3>
               <motion.div
                 initial="hidden"
@@ -301,35 +301,31 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <Image src={Usyd} alt='Usyd logo' width={150} height={80} />
-         
+                <Image src={Usyd} alt="Usyd logo" width={150} height={80} />
               </motion.div>
             </motion.div>
             <motion.h1 className="skill-text">職歴</motion.h1>
             <motion.div className="skill-icons-container">
               <motion.h2
+                className="skill-sub-text"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("down", "tween", 0.6, 0.5)}
               >
-               
-                ピアノ家庭教師 <GiGrandPiano size={25}/>
+                ピアノ家庭教師 <GiGrandPiano size={25} />
               </motion.h2>
               <motion.h3
-                className="date-text"             
+                className="skill-sub-text"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("left", "tween", 0.6, 0.5)}
               >
-               
-                ２０１９年 ～ 現在
+                「２０１９年 ～ 現在」
               </motion.h3>
-    
             </motion.div>
           </motion.div>
-          
         </motion.div>
       </motion.div>
     </motion.div>
