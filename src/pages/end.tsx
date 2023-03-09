@@ -1,125 +1,111 @@
-import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
-import {
-  slideIn,
-  fadeIn,
-  parentVariants,
-  childVariants,
-} from "../utils/motion";
+import React, { useState, useEffect } from "react";
+import Spacebar from "@/components/Spacebar";
+class TextScramble {
+  private el: HTMLElement;
+  private chars: string;
+  private resolve!: () => void;
+  private queue: {
+    from: string;
+    to: string;
+    start: number;
+    end: number;
+    char?: string;
+  }[] = [];
+  private frame = 0;
+  private frameRequest = 0;
 
-const End = () => {
-    const textRef = useRef<HTMLDivElement>(null);
-  function decodeText() {
-    const text = textRef.current;
-    const state: number[] = [];
+  constructor(el: HTMLElement) {
+    this.el = el;
+    this.chars = "¼½â€”ï¼�+ï¼Šï¼";
+    this.update = this.update.bind(this);
+  }
 
-    while (text) {
-    for (let i = 0, j = text.children.length; i < j; i++) {
-      text.children[i].classList.remove("state-1", "state-2", "state-3");
-      state[i] = i;
+  setText(newText: string) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise<void>((resolve) => (this.resolve = resolve));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || "";
+      const to = newText[i] || "";
+      const start = Math.floor(Math.random() * 40);
+      const end = start + Math.floor(Math.random() * 40);
+      this.queue.push({ from, to, start, end });
     }
-    const shuffled = shuffle(state);
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
 
-    for (let i = 0, j = shuffled.length; i < j; i++) {
-      const child = text.children[shuffled[i]] as HTMLElement;
-      const classes = child.classList;
-
-      const state1Time = Math.round(Math.random() * (2000 - 300)) + 50;
-      if (classes.contains("text-animation")) {
-        setTimeout(firstStages.bind(null, child), state1Time);
+  update() {
+    let output = "";
+    let complete = 0;
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class="dud">${char}</span>`;
+      } else {
+        output += from;
       }
     }
-} 
-  }
-
-  function firstStages(child: HTMLElement) {
-    if (child.classList.contains("state-2")) {
-      child.classList.add("state-3");
-    } else if (child.classList.contains("state-1")) {
-      child.classList.add("state-2");
-    } else if (!child.classList.contains("state-1")) {
-      child.classList.add("state-1");
-      setTimeout(secondStages.bind(null, child), 100);
-    }
-  }
-  function secondStages(child: HTMLElement) {
-    if (child.classList.contains("state-1")) {
-      child.classList.add("state-2");
-      setTimeout(thirdStages.bind(null, child), 100);
-    } else if (!child.classList.contains("state-1")) {
-      child.classList.add("state-1");
-    }
-  }
-  function thirdStages(child: HTMLElement) {
-    if (child.classList.contains("state-2")) {
-      child.classList.add("state-3");
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
     }
   }
 
-  function shuffle(array: number[]) {
-    let currentIndex = array.length,
-      temporaryValue,
-      randomIndex;
-
-    while (0 !== currentIndex) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
   }
+}
 
-  decodeText();
+const End = () => {
+  const phrases = ["ご清聴ありがとうございました", "Thank you"];
 
-  //    setInterval(function () { decodeText(); },10000);
+  const [textScramble, setTextScramble] = useState<TextScramble | null>(null);
+  const [counter, setCounter] = useState(0);
 
   useEffect(() => {
-    decodeText();
-    // beware: refresh button can overlap this timer and cause state mixups
-    const interval = setInterval(() => {
-      decodeText();
-    }, 1000);
-    return () => clearInterval(interval);
+    if (textScramble) {
+      const next = () => {
+        textScramble.setText(phrases[counter]).then(() => {
+          setTimeout(() => {
+            setCounter((counter + 1) % phrases.length);
+          }, 2500);
+        });
+      };
+
+      next();
+    }
+  }, [textScramble, counter, phrases]);
+
+  useEffect(() => {
+    const el = document.querySelector<HTMLElement>(".end-text");
+    if (el) {
+      setTextScramble(new TextScramble(el));
+    }
   }, []);
 
   return (
-    <motion.div
-      className="end-body"
-      initial="initial"
-      animate="enter"
-      exit="exit"
-      variants={parentVariants}
-    >
-      <motion.div
-        className="decode-text"
-        ref={textRef}
-        initial="initial"
-        animate="enter"
-        exit="exit"
-        variants={childVariants}
-      >
-        <div className="text-animation">ご</div>
-        <div className="text-animation">清</div>
-        <div className="text-animation">聴</div>
-
-        <div className="space"></div>
-
-        <div className="text-animation">あ</div>
-        <div className="text-animation">り</div>
-        <div className="text-animation">が</div>
-        <div className="text-animation">と</div>
-        <div className="text-animation">う</div>
-        <div className="text-animation">ご</div>
-        <div className="text-animation">ざ</div>
-        <div className="text-animation">い</div>
-        <div className="text-animation">ま</div>
-        <div className="text-animation">し</div>
-        <div className="text-animation">た</div>
-      </motion.div>
-    </motion.div>
+    <div>
+      <div className="end-body end-container">
+        <div className="end-text"></div>
+      </div>
+      <div className="end-inner">
+        <Spacebar />
+      </div>
+    </div>
   );
 };
 
