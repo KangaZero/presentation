@@ -1,9 +1,11 @@
 import '@/styles/globals.css';
 import '@/styles/start.scss';
 import '@/styles/about.scss';
+import '@/styles/projects.scss';
 import '@/styles/vertical-text-carousel.scss';
 import '@/styles/profile-card.scss';
 import '@/styles/three-d-button.scss';
+import '@/styles/swiper-carousel.scss';
 import type { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
 

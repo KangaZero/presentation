@@ -1,0 +1,21 @@
+$bg-color: rgb(69, 59, 116);
+
+.swiper {
+  height: 60%;
+  width: 100%;
+  background-color: $bg-color;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 500px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  // display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

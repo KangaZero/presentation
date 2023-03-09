@@ -40,7 +40,6 @@ import VerticalTextCarousel from "@/components/VerticalTextCarousel";
 import ProfileCard from "@/components/profileCard";
 import ThreeDButton from "@/components/ThreeDButton";
 import Usyd from "../../public/usyd.svg";
-import Link from "next/link";
 import Image from "next/image";
 
 // export interface aboutProps {
@@ -77,30 +76,8 @@ const About = () => {
         </motion.h1>
 
         <motion.div className="about-heading-button-container">
-            <ThreeDButton text="Projects" link="/projects" />
-            <ThreeDButton text="Home" link="/" />
-          {/* <Link href="/projects">
-            <motion.button
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-              variants={fadeIn("up", "tween", 0.5, 0.5)}
-              className="next-button"
-            >
-              Next
-            </motion.button>
-          </Link>
-          <Link href="/">
-            <motion.button
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-              variants={fadeIn("up", "tween", 0.5, 0.5)}
-              className="return-button"
-            >
-              Return
-            </motion.button> */}
-          {/* </Link> */}
+          <ThreeDButton text="プロジェクト" link="/projects" />
+          <ThreeDButton text="ホーム" link="/" />
         </motion.div>
       </motion.div>
       {/* about-body */}
@@ -113,7 +90,15 @@ const About = () => {
       >
         <motion.div className="about-container">
           <motion.div className="skill-container">
-            <motion.h1 className="skill-text">スキル</motion.h1>
+            <motion.h1
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.25 }}
+              variants={fadeIn("down", "tween", 1, 0.5)}
+              className="skill-text"
+            >
+              スキル
+            </motion.h1>
             <motion.div className="skill-icons-container">
               <motion.h2
                 initial="hidden"
@@ -150,7 +135,14 @@ const About = () => {
               </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
-              <motion.h2 whileInView="show">データベース言語</motion.h2>
+              <motion.h2
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={slideIn("right", "tween", 1, 0.5)}
+              >
+                データベース言語
+              </motion.h2>
               <div className="divider"></div>
 
               <motion.div
@@ -254,7 +246,15 @@ const About = () => {
         {/* right body */}
         <motion.div className="about-container">
           <motion.div className="skill-container">
-            <motion.h1 className="skill-text">学歴</motion.h1>
+            <motion.h1
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.25 }}
+              variants={fadeIn("down", "tween", 1, 0.5)}
+              className="skill-text"
+            >
+              学歴
+            </motion.h1>
             <motion.div className="skill-icons-container">
               <motion.h2
                 className="skill-sub-text"
@@ -304,7 +304,15 @@ const About = () => {
                 <Image src={Usyd} alt="Usyd logo" width={150} height={80} />
               </motion.div>
             </motion.div>
-            <motion.h1 className="skill-text">職歴</motion.h1>
+            <motion.h1
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.25 }}
+              variants={fadeIn("down", "tween", 1, 0.5)}
+              className="skill-text"
+            >
+              職歴
+            </motion.h1>
             <motion.div className="skill-icons-container">
               <motion.h2
                 className="skill-sub-text"

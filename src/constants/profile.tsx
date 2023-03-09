@@ -1,9 +1,9 @@
-export　interface profileProps {
-    name: string;
+export interface profileProps {
+  name: string;
 }
 
 const profile: profileProps = {
-    name: 'ヨング・サムエル',
-    }
+  name: "ヨング・サムエル",
+};
 
 export default profile;
