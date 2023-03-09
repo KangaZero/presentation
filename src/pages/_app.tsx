@@ -6,6 +6,8 @@ import '@/styles/vertical-text-carousel.scss';
 import '@/styles/profile-card.scss';
 import '@/styles/three-d-button.scss';
 import '@/styles/swiper-carousel.scss';
+import '@/styles/end.scss';
+import '@/styles/test.scss'
 import type { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
 

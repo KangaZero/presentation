@@ -8,7 +8,7 @@ type CarouselProps = {
 
 const VerticalTextCarousel: React.FC<CarouselProps> = ({
   items,
-  duration = 10,
+  duration = 12,
 }) => {
   //   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   useEffect(() => {
