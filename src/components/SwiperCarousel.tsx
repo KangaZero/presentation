@@ -2,11 +2,11 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import {
-    slideIn,
-    fadeIn,
-    parentVariants,
-    childVariants,
-  } from "../utils/motion";
+  slideIn,
+  fadeIn,
+  parentVariants,
+  childVariants,
+} from "../utils/motion";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,15 +15,14 @@ import "swiper/css/pagination";
 
 import { Autoplay, Pagination, Navigation, EffectCoverflow } from "swiper";
 import projectDetails from "@/constants/projectDetails";
-
-
+import Image from "next/image";
 
 const SwiperCarousel = () => (
   <motion.div
-  initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.25 }}
-          variants={fadeIn("down", "tween", 0.3, 0.5)}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, amount: 0.25 }}
+    variants={fadeIn("down", "tween", 0.3, 0.5)}
   >
     <Swiper
       effect={"coverflow"}
@@ -42,16 +41,15 @@ const SwiperCarousel = () => (
         delay: 30000,
         disableOnInteraction: false,
       }}
-    //   pagination={true}
+      //   pagination={true}
       navigation={true}
       modules={[Navigation, Autoplay, EffectCoverflow]}
       className="mySwiper"
     >
-
       {projectDetails.map((project, index) => (
         <SwiperSlide key={index}>
           <h1>{project.title}</h1>
-          <img src={project.url} />
+          <Image width={600} height={300} alt={project.description} src={project.url} />
           <p className="image-carousel-text">{project.description}</p>
         </SwiperSlide>
       ))}

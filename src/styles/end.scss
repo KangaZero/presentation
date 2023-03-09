@@ -1,9 +1,9 @@
 .end-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .end-container {
   width: 100%;
@@ -12,12 +12,11 @@
   display: flex;
 }
 
-.end-inner{
+.end-inner {
   position: absolute;
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
 .end-text {

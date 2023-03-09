@@ -3,19 +3,17 @@ import { TimelineMax, Elastic } from "gsap";
 
 type CarouselProps = {
   items: string[];
-  duration?: number;
 };
 
 const VerticalTextCarousel: React.FC<CarouselProps> = ({
   items,
-  duration = 12,
 }) => {
   //   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   useEffect(() => {
     const vsOpts = {
       $slides: document.querySelectorAll(".v-slide"),
       $list: document.querySelector(".v-slides"),
-      duration: duration,
+      duration: 12,
       lineHeight: 50,
     };
 

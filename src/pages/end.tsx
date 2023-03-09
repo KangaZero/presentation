@@ -71,12 +71,12 @@ class TextScramble {
 }
 
 const End = () => {
-  const phrases = ["ご清聴ありがとうございました", "Thank you"];
-
   const [textScramble, setTextScramble] = useState<TextScramble | null>(null);
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
+    const phrases = ["ご清聴ありがとうございました", "Thank you"];
+
     if (textScramble) {
       const next = () => {
         textScramble.setText(phrases[counter]).then(() => {
@@ -88,7 +88,7 @@ const End = () => {
 
       next();
     }
-  }, [textScramble, counter, phrases]);
+  }, [textScramble, counter]);
 
   useEffect(() => {
     const el = document.querySelector<HTMLElement>(".end-text");
@@ -98,7 +98,7 @@ const End = () => {
   }, []);
 
   return (
-    <div>
+    <div className="start-bg">
       <div className="end-body end-container">
         <div className="end-text"></div>
       </div>
