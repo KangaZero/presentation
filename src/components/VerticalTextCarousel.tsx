@@ -10,7 +10,7 @@ const VerticalTextCarousel: React.FC<CarouselProps> = ({
   items,
   duration = 10,
 }) => {
-//   const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  //   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   useEffect(() => {
     const vsOpts = {
       $slides: document.querySelectorAll(".v-slide"),
@@ -38,14 +38,14 @@ const VerticalTextCarousel: React.FC<CarouselProps> = ({
     };
   }, []);
 
-//   useEffect(() => {
-//     const intervalId = setInterval(() => {
-//       setCurrentItemIndex((currentIndex) =>
-//         currentIndex === items.length - 1 ? 0 : currentIndex + 1
-//       );
-//     }, duration);
-//     return () => clearInterval(intervalId);
-//   }, [items.length, duration]);
+  //   useEffect(() => {
+  //     const intervalId = setInterval(() => {
+  //       setCurrentItemIndex((currentIndex) =>
+  //         currentIndex === items.length - 1 ? 0 : currentIndex + 1
+  //       );
+  //     }, duration);
+  //     return () => clearInterval(intervalId);
+  //   }, [items.length, duration]);
 
   return (
     <div className="container">

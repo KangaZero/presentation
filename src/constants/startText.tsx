@@ -11,9 +11,9 @@ type startTextType = {
 
 const startText: startTextType = {
     firstName: 'Samuel Wai Weng',
-    firstNameJp: 'サムエル・ワイ・ウェング',
+    firstNameJp: 'ヨング',
     lastName: 'Yong',
-    lastNameJp: 'ヨング',
+    lastNameJp: 'サムエル・ワイ・ウェング',
     title: 'Presentation',
     subTitle: 'Introduction',
     subTitleJp: '自己紹介',

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/earlyaccess/hannari.css');
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+@font-face { font-family: 'Hannari'; src: local('Hannari') or url('https://fonts.googleapis.com/earlyaccess/hannari.css'); }
+@font-face { font-family: 'Sawarabi Mincho'; src: local('Sawarabi Mincho') or url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho'); }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -51,12 +56,13 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
+    to bottom,
       transparent,
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+      )
+      rgb(var(--background-start-rgb));
+  font-family: 'Hannari', 'Sawarabi Mincho', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
 
 a {
   color: inherit;

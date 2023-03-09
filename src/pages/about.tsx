@@ -7,6 +7,7 @@ import {
 } from "../utils/motion";
 
 import { FaRegWindowMaximize } from "react-icons/fa";
+import { GiGrandPiano, GiJapan } from "react-icons/gi";
 import {
   SiHtml5,
   SiCss3,
@@ -37,7 +38,10 @@ import roles from "../constants/roles";
 import profile from "../constants/profile";
 import VerticalTextCarousel from "@/components/VerticalTextCarousel";
 import ProfileCard from "@/components/profileCard";
+import {TypingText} from "@/components/TypingText";
+import Usyd from '../../public/usyd.svg'
 import Link from "next/link";
+import Image from "next/image";
 
 // export interface aboutProps {
 //     roles: roleProps[];
@@ -45,7 +49,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <motion.body
+    <motion.div
       className="start-bg"
       initial="initial"
       animate="enter"
@@ -98,7 +102,7 @@ const About = () => {
         </motion.div>
       </motion.div>
       {/* about-body */}
-      <motion.body
+      <motion.div
         className="about-body"
         initial="initial"
         animate="enter"
@@ -125,22 +129,22 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiTypescript size={40} />
+                <SiTypescript size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiJavascript size={40} />
+                <SiJavascript size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiPython size={40} />
+                <SiPython size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiHtml5 size={40} />
+                <SiHtml5 size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiCss3 size={40} />
+                <SiCss3 size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <FaRegWindowMaximize size={40} />
+                <FaRegWindowMaximize size={25} />
               </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
@@ -154,9 +158,9 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiMysql size={40} />
+                <SiMysql size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiMongodb size={40} />
+                <SiMongodb size={25} />
               </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
@@ -177,31 +181,31 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiReact size={40} />
+                <SiReact size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiJquery size={40} />
+                <SiJquery size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiNextdotjs size={40} />
+                <SiNextdotjs size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiTailwindcss size={40} />
+                <SiTailwindcss size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiChakraui size={40} />
+                <SiChakraui size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiBootstrap size={40} />
+                <SiBootstrap size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiSass size={40} />
+                <SiSass size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiGraphql size={40} />
+                <SiGraphql size={25} />
                 <span className="custom-hidden">hi</span>
 
-                <SiSvg size={40} />
+                <SiSvg size={25} />
               </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
@@ -222,21 +226,21 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiExpress size={40} />
+                <SiExpress size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiApollographql size={40} />
+                <SiApollographql size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiPrisma size={40} />
+                <SiPrisma size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiJest size={40} />
+                <SiJest size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiNodedotjs size={40} />
+                <SiNodedotjs size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiWebpack size={40} />
+                <SiWebpack size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiFlask size={40} />
+                <SiFlask size={25} />
                 <span className="custom-hidden">hi</span>
-                <SiTensorflow size={40} />
+                <SiTensorflow size={25} />
               </motion.div>
             </motion.div>
           </motion.div>
@@ -248,17 +252,48 @@ const About = () => {
         {/* right body */}
         <motion.div className="about-container">
           <motion.div className="skill-container">
-            <motion.h1 className="skill-text">趣味</motion.h1>
+            <motion.h1 className="skill-text">学歴</motion.h1>
             <motion.div className="skill-icons-container">
+            <motion.h2
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={fadeIn("up", "tween", 0.6, 0.5)}
+              >
+               フルスタックウェブ開発証明書
+              </motion.h2>
+                  <div className="divider"></div>
+              <motion.h3
+                className="date-text"             
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={fadeIn("right", "tween", 0.6, 0.5)}
+              >
+ 
+               
+                ２０２２年・７月 ～ ２０２３年・1月
+              </motion.h3>
               <motion.h2
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("down", "tween", 0.6, 0.5)}
               >
-                プログラミング
+               
+                教養学部 <GiGrandPiano size={25}/> <GiJapan size={25}/>
               </motion.h2>
-              <div className="divider"></div>
+                  <div className="divider"></div>
+              <motion.h3
+                className="date-text"             
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={fadeIn("left", "tween", 0.6, 0.5)}
+              >
+               
+                ２０１９年・1月 ～ ２０２２年・７月
+              </motion.h3>
               <motion.div
                 initial="hidden"
                 whileInView="show"
@@ -266,14 +301,38 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiTypescript size={40} />
-                <span className="custom-hidden">hi</span>
+                <Image src={Usyd} alt='Usyd logo' width={150} height={80} />
+         
               </motion.div>
             </motion.div>
+            <motion.h1 className="skill-text">職歴</motion.h1>
+            <motion.div className="skill-icons-container">
+              <motion.h2
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={fadeIn("down", "tween", 0.6, 0.5)}
+              >
+               
+                ピアノ家庭教師 <GiGrandPiano size={25}/>
+              </motion.h2>
+              <motion.h3
+                className="date-text"             
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={fadeIn("left", "tween", 0.6, 0.5)}
+              >
+               
+                ２０１９年 ～ 現在
+              </motion.h3>
+    
+            </motion.div>
           </motion.div>
+          
         </motion.div>
-      </motion.body>
-    </motion.body>
+      </motion.div>
+    </motion.div>
   );
 };
 
