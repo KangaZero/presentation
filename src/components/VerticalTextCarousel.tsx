@@ -1,56 +1,4 @@
-// "use client";
-// import { useState, useEffect } from "react";
-
-// export interface carouselProps {
-//   texts: string[];
-//   interval?: number;
-// }
-
-// const VerticalTextCarousel: React.FC<carouselProps> = ({
-//   texts,
-//   interval = 500,
-// }) => {
-//   const [index, setIndex] = useState(0);
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       setIndex((index + 1) % texts.length);
-//     }, interval);
-//     return () => clearTimeout(timer);
-//   }, [index, interval, texts.length]);
-
-//   return (
-//     <div style={{ height: "2em", overflow: "hidden" }}>
-//       <div
-//         style={{
-//           display: "flex",
-//           flexDirection: "column",
-//           justifyContent: "center",
-//           height: "200%",
-//         }}
-//       >
-//         {texts.map((text: string, i: number) => (
-//           <div
-//             key={i}
-//             style={{
-//               transform: `translateY(-${index * 100}%)`,
-//               transition: "transform 1s",
-//             }}
-//           >
-//             <span>{text}</span>
-//             <span className="custom-hidden">hi</span>
-//             <span className="custom-hidden">hi</span>
-
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default VerticalTextCarousel;
-
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { TimelineMax, Elastic } from "gsap";
 
 type CarouselProps = {
@@ -63,7 +11,6 @@ const VerticalTextCarousel: React.FC<CarouselProps> = ({
   duration = 10,
 }) => {
 //   const [currentItemIndex, setCurrentItemIndex] = useState(0);
-
   useEffect(() => {
     const vsOpts = {
       $slides: document.querySelectorAll(".v-slide"),

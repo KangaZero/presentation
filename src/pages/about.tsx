@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { fadeIn, parentVariants, childVariants } from "../utils/motion";
+import {
+  slideIn,
+  fadeIn,
+  parentVariants,
+  childVariants,
+} from "../utils/motion";
 
 import { FaRegWindowMaximize } from "react-icons/fa";
 import {
@@ -40,7 +45,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <motion.div
+    <motion.body
       className="start-bg"
       initial="initial"
       animate="enter"
@@ -67,7 +72,18 @@ const About = () => {
           <VerticalTextCarousel items={roles} />
         </motion.h1>
 
-        <div className="about-heading-button-container">
+        <motion.div className="about-heading-button-container">
+          <Link href="/projects">
+            <motion.button
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.25 }}
+              variants={fadeIn("up", "tween", 0.5, 0.5)}
+              className="next-button"
+            >
+              Next
+            </motion.button>
+          </Link>
           <Link href="/">
             <motion.button
               initial="hidden"
@@ -79,18 +95,7 @@ const About = () => {
               Return
             </motion.button>
           </Link>
-          <Link href="/projects">
-            <motion.button
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.25 }}
-              variants={fadeIn("down", "tween", 0.6, 0.5)}
-              className="next-button"
-            >
-              Next
-            </motion.button>
-          </Link>
-        </div>
+        </motion.div>
       </motion.div>
       {/* about-body */}
       <motion.body
@@ -113,7 +118,13 @@ const About = () => {
                 プログラミング言語
               </motion.h2>
               <div className="divider"></div>
-              <div className="icons-container">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={slideIn("right", "tween", 1, 0.5)}
+                className="icons-container"
+              >
                 <SiTypescript size={40} />
                 <span className="custom-hidden">hi</span>
 
@@ -130,17 +141,23 @@ const About = () => {
                 <span className="custom-hidden">hi</span>
 
                 <FaRegWindowMaximize size={40} />
-              </div>
+              </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
               <motion.h2 whileInView="show">データベース言語</motion.h2>
               <div className="divider"></div>
 
-              <div className="icons-container">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={slideIn("right", "tween", 1, 0.5)}
+                className="icons-container"
+              >
                 <SiMysql size={40} />
                 <span className="custom-hidden">hi</span>
                 <SiMongodb size={40} />
-              </div>
+              </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
               <motion.h2
@@ -148,13 +165,18 @@ const About = () => {
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("down", "tween", 0.6, 0.5)}
-
               >
                 フロントエンド
               </motion.h2>
               <div className="divider"></div>
 
-              <div className="icons-container">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={slideIn("right", "tween", 1, 0.5)}
+                className="icons-container"
+              >
                 <SiReact size={40} />
                 <span className="custom-hidden">hi</span>
 
@@ -180,7 +202,7 @@ const About = () => {
                 <span className="custom-hidden">hi</span>
 
                 <SiSvg size={40} />
-              </div>
+              </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
               <motion.h2
@@ -193,7 +215,13 @@ const About = () => {
               </motion.h2>
               <div className="divider"></div>
 
-              <div className="icons-container">
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={slideIn("right", "tween", 1, 0.5)}
+                className="icons-container"
+              >
                 <SiExpress size={40} />
                 <span className="custom-hidden">hi</span>
                 <SiApollographql size={40} />
@@ -209,16 +237,43 @@ const About = () => {
                 <SiFlask size={40} />
                 <span className="custom-hidden">hi</span>
                 <SiTensorflow size={40} />
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>
+        {/* middle body */}
         <motion.div className="about-container">
           <ProfileCard name={profile.name} />
         </motion.div>
-        <motion.div className="about-container">hi</motion.div>
+        {/* right body */}
+        <motion.div className="about-container">
+          <motion.div className="skill-container">
+            <motion.h1 className="skill-text">趣味</motion.h1>
+            <motion.div className="skill-icons-container">
+              <motion.h2
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={fadeIn("down", "tween", 0.6, 0.5)}
+              >
+                プログラミング
+              </motion.h2>
+              <div className="divider"></div>
+              <motion.div
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.25 }}
+                variants={slideIn("right", "tween", 1, 0.5)}
+                className="icons-container"
+              >
+                <SiTypescript size={40} />
+                <span className="custom-hidden">hi</span>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </motion.body>
-    </motion.div>
+    </motion.body>
   );
 };
 
