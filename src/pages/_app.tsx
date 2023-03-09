@@ -1,7 +1,7 @@
 import '@/styles/globals.css';
 import '@/styles/start.scss';
 import '@/styles/about.scss';
-// import '@/styles/vertical-text-carousel.scss';\import '@/styles/card.scss';
+import '@/styles/vertical-text-carousel.scss';
 import '@/styles/profile-card.scss';
 import type { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';

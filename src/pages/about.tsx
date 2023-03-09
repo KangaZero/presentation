@@ -1,8 +1,6 @@
-import VerticalTextCarousel from "@/components/VerticalTextCarousel";
 import { motion } from "framer-motion";
 import { fadeIn, parentVariants, childVariants } from "../utils/motion";
-import roles from "../constants/roles";
-import profile from "../constants/profile";
+
 import { FaRegWindowMaximize } from "react-icons/fa";
 import {
   SiHtml5,
@@ -21,9 +19,17 @@ import {
   SiSass,
   SiGraphql,
   SiSvg,
+  SiExpress,
+  SiApollographql,
+  SiJest,
+  SiNodedotjs,
+  SiWebpack,
+  SiFlask,
+  SiTensorflow,
 } from "react-icons/si";
-
-import profileCard from "@/components/profileCard";
+import roles from "../constants/roles";
+import profile from "../constants/profile";
+import VerticalTextCarousel from "@/components/VerticalTextCarousel";
 import ProfileCard from "@/components/profileCard";
 
 // export interface aboutProps {
@@ -55,8 +61,10 @@ const About = () => {
           className="about-title"
         >
           About
+          <span className="custom-hidden">hi</span>
+          <VerticalTextCarousel items={roles} />
         </motion.h1>
-        {/* <VerticalTextCarousel roles={roles} /> */}
+     
         <div className="about-heading-button-container">
           <motion.button className="return-button">Return</motion.button>
           <motion.button className="next-button">Next</motion.button>
@@ -137,13 +145,25 @@ const About = () => {
             <motion.div className="skill-icons-container">
               <h2>バックエンド</h2>
               <div className="icons-container">
-                {/* Add React, jquery, NextJs, Tailwind, ChakraUI, Bootstrap, SCSS, graphql, svg */}
+                <SiExpress size={40} />
+                <span className="custom-hidden">hi</span>
+                <SiApollographql size={40} />
+                <span className="custom-hidden">hi</span>
+                <SiJest size={40} />
+                <span className="custom-hidden">hi</span>
+                <SiNodedotjs size={40} />
+                <span className="custom-hidden">hi</span>
+                <SiWebpack size={40} />
+                <span className="custom-hidden">hi</span>
+                <SiFlask size={40} />
+                <span className="custom-hidden">hi</span>
+                <SiTensorflow size={40} />
               </div>
             </motion.div>
           </motion.div>
         </motion.div>
         <motion.div className="about-container">
-            <ProfileCard name={profile.name} />
+          <ProfileCard name={profile.name} />
         </motion.div>
         <motion.div className="about-container">hi</motion.div>
       </motion.body>

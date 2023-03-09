@@ -15,10 +15,12 @@
   .profile-card0 {
     background: url("../../public/profile-card-image2.jpg") center center no-repeat;
     background-size: 300px;
+    filter: blur(1.5px)
   }
   .profile-card0:hover {
     background: url("../../public/profile-card-image2.jpg") left center no-repeat;
     background-size: 600px;
+    filter: blur(1.5px)
   }
   .profile-card0:hover .profile-title {
     opacity: 1;
