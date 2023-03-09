@@ -42,7 +42,8 @@ const Projects = () => {
       </motion.div>
       {/* project-body */}
       <motion.div className="image-carousel-body">
-        <motion.h1>Yo</motion.h1>
+        <motion.h1>PetNanny</motion.h1>
+        <motion.h1>Eーコマース・フルスタック・ウエブアプリ</motion.h1>
         <SwiperCarousel />
       </motion.div>
       <motion.div>

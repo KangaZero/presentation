@@ -4,59 +4,50 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, Pagination, EffectCoverflow } from 'swiper';
+import { Autoplay, Pagination, Navigation, EffectCoverflow } from "swiper";
 
 import projectDetails from "@/constants/projectDetails";
 
-interface SwiperCarouselProps {
-    title: string;
-    description: string;
-    url: string;
-}
 
-const SwiperCarousel = ({ title, description, url }: SwiperCarouselProps) => {
-    return (
-      <>
-        <Swiper
-          effect={"coverflow"}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={"auto"}
-          coverflowEffect={{
-            rotate: 50,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          }}
-           autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={true}
-          modules={[Autoplay, EffectCoverflow, Pagination]}
-          className="mySwiper"
-        >  
-          <SwiperSlide>
-            <h1>{title}</h1>
-            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-          </SwiperSlide>
-        </Swiper>
-      </>
-    );
-  }
-  
-  export default SwiperCarousel;
+const SwiperCarousel = () => (
+  <div>
+    <Swiper
+      effect={"coverflow"}
+      speed={2000}
+      grabCursor={true}
+      centeredSlides={true}
+      slidesPerView={"auto"}
+      coverflowEffect={{
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      }}
+      autoplay={{
+        delay: 30000,
+        disableOnInteraction: false,
+      }}
+      pagination={true}
+      navigation={true}
+      modules={[Navigation, Autoplay, EffectCoverflow, Pagination]}
+      className="mySwiper"
+    >
+
+      {projectDetails.map((project, index) => (
+        <SwiperSlide key={index}>
+          <h1>{project.title}</h1>
+          <img src={project.url} />
+          <p>{project.description}</p>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+);
+
+export default SwiperCarousel;

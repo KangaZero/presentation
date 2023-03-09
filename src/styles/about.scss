@@ -1,4 +1,5 @@
 $bg-color: rgb(69, 59, 116);
+$border-color: rgba(89, 59, 225, 0.523);
 
 .about-heading {
   display: flex;
@@ -6,7 +7,7 @@ $bg-color: rgb(69, 59, 116);
   height: 15vh;
   width: 100%;
   background-color: $bg-color;
-  border: 1px solid rgba(89, 59, 225, 0.523);
+  border-bottom: 3px solid $border-color;
   padding: 50px;
 }
 
@@ -50,49 +51,61 @@ $bg-color: rgb(69, 59, 116);
   padding: 5px;
 }
 
+// .about-container-outer {
+//     // background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+//  border-radius: 20px;
+//  transition: all 0.2s;
+// }
+
 .about-container {
   display: flex;
-  padding: 20px;
-  border: 10px solid $bg-color;
-      text-align: center;
-      justify-content: space-around;
-      align-items: center;
+  margin: 22px;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px 7px 0 0;
+  background-image: $bg-color;
+
+  border: 5px solid linear-gradient(163deg, #9e2caf 0%, #bb3471 100%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+  transition: all 0.3s;
 }
 
-.divider{
-    padding: 2px;
+.about-container:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+  box-shadow: 0px 0px 30px 1px #b434bb;
 }
 
-.skill-text{
-    font-family: 'Rampart One';
+
+.divider {
+  padding: 2px;
 }
 
-.skill-sub-text{
-    // font-family: 'DotGothic16';
-    // font-size: 15px;
+.skill-text {
+  font-family: "Rampart One";
 }
 
 .skill-icons-container {
-    display: flex;
-    flex-direction: column;
-//   grid-template-columns: 100px 50px 100px;
-//   grid-template-rows: 80px auto 80px;
-//   column-gap: 10px;
-//   row-gap: 20px;
-//   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  //   grid-template-columns: 100px 50px 100px;
+  //   grid-template-rows: 80px auto 80px;
+  //   column-gap: 10px;
+  //   row-gap: 20px;
+  //   border: 1px solid black;
   padding: 15px;
 }
 
 .skill-icons-container > h2 {
-    color:#bababa
+  color: #bababa;
 }
 
 .skill-icon:hover {
-    color: #a8a8aa;
-    transform: scale(1.1) 0.5s;
+  color: #a8a8aa;
+  transform: scale(1.1) 0.5s;
 }
 
-
 .custom-hidden {
-    opacity: 0;
+  opacity: 0;
 }
