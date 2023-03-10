@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import React, { useState, useEffect } from "react";
 import Spacebar from "@/components/Spacebar";
 class TextScramble {

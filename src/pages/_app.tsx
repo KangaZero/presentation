@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import "@/styles/globals.css";
 import "@/styles/start.scss";
 import "@/styles/about.scss";
