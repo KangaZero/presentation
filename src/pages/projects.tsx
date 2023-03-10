@@ -6,7 +6,7 @@ import {
   parentVariants,
   childVariants,
 } from "../utils/motion";
-import ThreeDButton from "@/components/ThreeDButton";
+import ThreeDButton from "../../ThreeDButton";
 import SwiperCarousel from "@/components/SwiperCarousel";
 
 const Projects = () => {

@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { parentVariants } from "../utils/motion";
+import { parentVariants } from "./src/utils/motion";
 
 export interface ThreeDButtonProps {
   text: string;

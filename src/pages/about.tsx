@@ -39,7 +39,7 @@ import roles from "../constants/roles";
 import profile from "../constants/profile";
 import VerticalTextCarousel from "@/components/VerticalTextCarousel";
 import ProfileCard from "@/components/profileCard";
-import ThreeDButton from "@/components/ThreeDButton";
+import ThreeDButton from "../../ThreeDButton";
 import Usyd from "../../public/usyd.svg";
 import Image from "next/image";
 
