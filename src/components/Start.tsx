@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Typed from "typed.js";
 
@@ -29,7 +29,7 @@ const Start: React.FC<startProps> = ({
   subTitleJp,
 }) => {
   useEffect(() => {
-    const typed = new Typed(".start-button-text", {
+    new Typed(".start-button-text", {
       strings: ["Start", "開始"],
       typeSpeed: 40,
       backSpeed: 40,

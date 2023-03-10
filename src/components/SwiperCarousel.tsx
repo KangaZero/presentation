@@ -1,19 +1,14 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
-import {
-  slideIn,
-  fadeIn,
-  parentVariants,
-  childVariants,
-} from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import { Autoplay, Pagination, Navigation, EffectCoverflow } from "swiper";
+import { Autoplay, Navigation, EffectCoverflow } from "swiper";
 import projectDetails from "@/constants/projectDetails";
 import Image from "next/image";
 
@@ -49,7 +44,12 @@ const SwiperCarousel = () => (
       {projectDetails.map((project, index) => (
         <SwiperSlide key={index}>
           <h1>{project.title}</h1>
-          <Image width={600} height={300} alt={project.description} src={project.url} />
+          <Image
+            width={600}
+            height={300}
+            alt={project.description}
+            src={project.url}
+          />
           <p className="image-carousel-text">{project.description}</p>
         </SwiperSlide>
       ))}

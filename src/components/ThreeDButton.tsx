@@ -1,8 +1,8 @@
 "use client";
-
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { fadeIn, parentVariants, childVariants } from "../utils/motion";
+import { parentVariants } from "../utils/motion";
 
 export interface ThreeDButtonProps {
   text: string;

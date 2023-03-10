@@ -1,13 +1,11 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { TimelineMax, Elastic } from "gsap";
 
 type CarouselProps = {
   items: string[];
 };
 
-const VerticalTextCarousel: React.FC<CarouselProps> = ({
-  items,
-}) => {
+const VerticalTextCarousel: React.FC<CarouselProps> = ({ items }) => {
   //   const [currentItemIndex, setCurrentItemIndex] = useState(0);
   useEffect(() => {
     const vsOpts = {
