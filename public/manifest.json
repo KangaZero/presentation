@@ -1,12 +1,12 @@
 {
+  "name": "presentation",
+  "short_name": "pres",
   "theme_color": "#d2d2d2",
   "background_color": "rgb(69, 59, 116)",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "description": "自己紹介のプレゼンテーション",
-  "name": "presentation",
-  "short_name": "pres",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

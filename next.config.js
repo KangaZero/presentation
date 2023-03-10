@@ -1,8 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-// /** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const withPWA = require("next-pwa");
-const runtimeCaching = require("next-pwa/cache");
 
 module.exports = withPWA({
   exclude: {
@@ -14,7 +13,19 @@ module.exports = withPWA({
   pwa: {
     dest: "public",
     skipWaiting: true,
-    runtimeCaching,
+    buildId: "my-app",
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: "NetworkFirst",
+        options: {
+          cacheName: "offlineCache",
+          expiration: {
+            maxEntries: 200,
+          },
+        },
+      },
+    ],
     // eslint-disable-next-line no-undef
     disable: process.env.NODE_ENV === "development",
   },
