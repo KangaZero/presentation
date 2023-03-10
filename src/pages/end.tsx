@@ -1,5 +1,15 @@
 /* eslint-disable prefer-const */
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { fadeIn, parentVariants, childVariants } from "../utils/motion";
+import {
+  SiTypescript,
+  SiReact,
+  SiSass,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiJquery,
+} from "react-icons/si";
 import Spacebar from "@/components/Spacebar";
 class TextScramble {
   private el: HTMLElement;
@@ -83,7 +93,7 @@ const End = () => {
         textScramble.setText(phrases[counter]).then(() => {
           setTimeout(() => {
             setCounter((counter + 1) % phrases.length);
-          }, 2500);
+          }, 3500);
         });
       };
 
@@ -99,14 +109,67 @@ const End = () => {
   }, []);
 
   return (
-    <div className="start-bg">
-      <div className="end-body end-container">
+    <motion.div
+      className="start-bg"
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      variants={parentVariants}
+    >
+      <motion.div
+        className="end-tools-container"
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        variants={childVariants}
+      >
+        <motion.h1
+          className="end-tools-title"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          variants={fadeIn("down", "tween", 1, 0.5)}
+        >
+          こちらのアプリは以下のツールで作成されました
+        </motion.h1>
+        <motion.div
+          className="end-tools-inner-container"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          variants={fadeIn("down", "tween", 1, 0.5)}
+        >
+          <SiTypescript size={35} />
+          <span className="custom-hidden">hi</span>
+
+          <SiReact size={35} />
+          <span className="custom-hidden">hi</span>
+
+          <SiSass size={35} />
+          <span className="custom-hidden">hi</span>
+
+          <SiNextdotjs size={35} />
+          <span className="custom-hidden">hi</span>
+
+          <SiTailwindcss size={35} />
+          <span className="custom-hidden">hi</span>
+
+          <SiJquery size={35} />
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="end-body end-container"
+        initial="initial"
+        animate="enter"
+        exit="exit"
+        variants={childVariants}
+      >
         <div className="end-text"></div>
-      </div>
+      </motion.div>
       <div className="end-inner">
         <Spacebar />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

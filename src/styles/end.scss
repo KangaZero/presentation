@@ -1,3 +1,19 @@
+.end-tools-container{
+  position: absolute;
+  left: 31.6%;
+  top: 20%;
+  text-align: center;
+}
+
+.end-tools-title{
+  color: #bababa;
+
+}
+
+.end-tools-inner-container{
+  padding: 2px;
+}
+
 .end-body {
   height: 100vh;
   display: flex;
@@ -5,6 +21,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .end-container {
   width: 100%;
   justify-content: center;

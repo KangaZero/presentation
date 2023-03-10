@@ -87,11 +87,11 @@ const About = () => {
         <motion.div className="about-container">
           <motion.div className="skill-container">
             <motion.h1
+              className="skill-text"
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.25 }}
               variants={fadeIn("down", "tween", 1, 0.5)}
-              className="skill-text"
             >
               スキル
             </motion.h1>
@@ -106,28 +106,28 @@ const About = () => {
               </motion.h2>
               <div className="divider"></div>
               <motion.div
+                className="icons-container"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: false, amount: 0.25 }}
                 variants={slideIn("right", "tween", 1, 0.5)}
-                className="icons-container"
               >
-                <SiTypescript size={25} />
+                <SiTypescript size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiJavascript size={25} />
+                <SiJavascript size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiPython size={25} />
+                <SiPython size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiHtml5 size={25} />
+                <SiHtml5 size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiCss3 size={25} />
+                <SiCss3 size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <FaRegWindowMaximize size={25} />
+                <FaRegWindowMaximize size={30} />
               </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
@@ -148,9 +148,9 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiMysql size={25} />
+                <SiMysql size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiMongodb size={25} />
+                <SiMongodb size={30} />
               </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
@@ -171,31 +171,31 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiReact size={25} />
+                <SiReact size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiJquery size={25} />
+                <SiJquery size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiNextdotjs size={25} />
+                <SiNextdotjs size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiTailwindcss size={25} />
+                <SiTailwindcss size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiChakraui size={25} />
+                <SiChakraui size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiBootstrap size={25} />
+                <SiBootstrap size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiSass size={25} />
+                <SiSass size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiGraphql size={25} />
+                <SiGraphql size={30} />
                 <span className="custom-hidden">hi</span>
 
-                <SiSvg size={25} />
+                <SiSvg size={30} />
               </motion.div>
             </motion.div>
             <motion.div className="skill-icons-container">
@@ -216,21 +216,21 @@ const About = () => {
                 variants={slideIn("right", "tween", 1, 0.5)}
                 className="icons-container"
               >
-                <SiExpress size={25} />
+                <SiExpress size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiApollographql size={25} />
+                <SiApollographql size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiPrisma size={25} />
+                <SiPrisma size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiJest size={25} />
+                <SiJest size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiNodedotjs size={25} />
+                <SiNodedotjs size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiWebpack size={25} />
+                <SiWebpack size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiFlask size={25} />
+                <SiFlask size={30} />
                 <span className="custom-hidden">hi</span>
-                <SiTensorflow size={25} />
+                <SiTensorflow size={30} />
               </motion.div>
             </motion.div>
           </motion.div>
@@ -282,7 +282,7 @@ const About = () => {
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("down", "tween", 0.6, 0.5)}
               >
-                教養学部 <GiGrandPiano size={25} /> <GiJapan size={25} />
+                教養学部 <GiGrandPiano size={30} /> <GiJapan size={30} />
               </motion.h2>
               <div className="divider"></div>
               <motion.h3
@@ -321,7 +321,7 @@ const About = () => {
                 viewport={{ once: false, amount: 0.25 }}
                 variants={fadeIn("down", "tween", 0.6, 0.5)}
               >
-                ピアノ家庭教師 <GiGrandPiano size={25} />
+                ピアノ家庭教師 <GiGrandPiano size={30} />
               </motion.h2>
               <motion.h3
                 className="skill-sub-text"
