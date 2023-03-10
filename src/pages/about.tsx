@@ -38,7 +38,8 @@ import {
 import roles from "../constants/roles";
 import profile from "../constants/profile";
 import VerticalTextCarousel from "@/components/VerticalTextCarousel";
-import ProfileCard from "@/components/profileCard";
+import EndText from "@/components/EndText";
+import ProfileCard from "@/components/ProfileCard";
 import ThreeDButton from "../../ThreeDButton";
 import Usyd from "../../public/usyd.svg";
 import Image from "next/image";
@@ -69,7 +70,8 @@ const About = () => {
         >
           About
           <span className="custom-hidden">hi</span>
-          <VerticalTextCarousel items={roles} />
+          {/* <VerticalTextCarousel items={roles} /> */}
+          <EndText />
         </motion.h1>
 
         <motion.div className="about-heading-button-container">

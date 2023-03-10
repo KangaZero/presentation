@@ -14,7 +14,7 @@
 
 .end-inner {
   position: absolute;
-  top: 70%;
+  top: 73%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -26,4 +26,11 @@
 }
 .dud {
   color: #757575;
+}
+
+// end-text as a component
+
+.end-text-component {
+  font-size: 2rem;
+  color: #d2d2d2;
 }
