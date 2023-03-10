@@ -35,9 +35,7 @@ import {
   SiTensorflow,
   SiPrisma,
 } from "react-icons/si";
-import roles from "../constants/roles";
 import profile from "../constants/profile";
-import VerticalTextCarousel from "@/components/VerticalTextCarousel";
 import EndText from "@/components/EndText";
 import ProfileCard from "@/components/ProfileCard";
 import ThreeDButton from "../../ThreeDButton";
@@ -70,7 +68,6 @@ const About = () => {
         >
           About
           <span className="custom-hidden">hi</span>
-          {/* <VerticalTextCarousel items={roles} /> */}
           <EndText />
         </motion.h1>
 
