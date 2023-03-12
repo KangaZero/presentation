@@ -1,12 +1,14 @@
 import React from "react";
 export interface profileCardInterface {
+  number: string;
   name: string;
 }
 
-const ProfileCard: React.FC<profileCardInterface> = ({ name }) => {
+const ProfileCard: React.FC<profileCardInterface> = ({ name, number }) => {
   return (
     <div className="profile-card profile-card0">
       <div className="border">
+        <h2 className="profile-title">{number}</h2>
         <h2 className="profile-title">{name}</h2>
         <div className="profile-icons">
           <i className="profile-fa fa-codepen" aria-hidden="true"></i>

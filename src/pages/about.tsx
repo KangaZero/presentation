@@ -239,7 +239,7 @@ const About = () => {
         {/* middle body */}
 
         <motion.div className="about-container">
-          <ProfileCard name={profile.name} />
+          <ProfileCard name={profile.name} number={profile.number} />
         </motion.div>
 
         {/* right body */}
